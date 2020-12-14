@@ -1,21 +1,25 @@
 pipeline {
     agent any
-
+    options {
+      timeout(time: 120, unit: 'SECONDS') 
+    }
     stages {
         stage('Pipeline') {
-            script{
-            	stage('build & test'){
+            steps {
+                script {
+                    stage('build & test') {
 
-            	}
-            	stage('sonar'){
-
-            	}
-            	stage('run'){
-
-            	}
-            	stage('nexus'){
-
-            	}
+                    }
+                    stage('sonar') {
+                        
+                    }
+                    stage('run') {
+                        
+                    }
+                    stage('nexus') {
+                        
+                    }
+                }
             }
         }
     }
