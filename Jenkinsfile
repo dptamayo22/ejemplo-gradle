@@ -9,13 +9,13 @@ pipeline {
             steps {
                 script {
                     if (params.eleccion =='gradle'){
-                        echo(params.eleccion)
+                        echo 'gradle'
                         def ejecucion_gradle = load 'gradle.groovy'
                         ejecucion_gradle.call();
 
                     } else if (params.eleccion =='maven'){
 
-                        echo(params.eleccion)
+                        echo 'maven'
                         def ejecucion_maven =  load 'maven.groovy'
                         ejecucion_maven.call();
                     }
