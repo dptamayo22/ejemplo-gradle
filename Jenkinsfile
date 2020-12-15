@@ -18,6 +18,7 @@ pipeline {
                         echo(params.eleccion)
                         def ejecucion_maven =  load 'maven.groovy'
                         ejecucion_maven.call();
+                    }
                 }
             }
         }
