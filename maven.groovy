@@ -14,10 +14,6 @@ def call(){
     stage('Run') {
         sh 'nohup bash ./mvnw spring-boot:run &'
     }
-    stage('Test') {
-        sleep(time: 10, unit: "SECONDS")
-        sh 'curl -X GET "http://localhost:8081/rest/mscovid/test?msg=testing"'
-    }
   }
 }
 return this;

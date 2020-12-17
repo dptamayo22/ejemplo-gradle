@@ -15,9 +15,6 @@ def call(){
             stage('run') {
                 sh 'nohup bash gradlew bootRun &'
             }
-            stage('rest') {
-   				sh 'curl -X GET http://localhost:8081/rest/mscovid/test?msg=testing'
-            }
         }
     }
   }
