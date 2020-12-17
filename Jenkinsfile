@@ -25,8 +25,14 @@ pipeline {
     }
     post {
         success {
+         
+            slackSend (channel: 'U01DD6F014K', color: '#00FF00', message: "Build Success: [Dianela Tamayo] [${env.JOB_NAME}] [${params.eleccion}]", channel: 'U01DD6F014K', teamDomain: 'dipdevopsusach2020', tokenCredentialId: 'slack')
         
-            slackSend (color: '#00FF00', message: "Build Success: [Dianela Tamayo] [${env.JOB_NAME}] [${params.eleccion}]", channel: 'U01DD6F014K', teamDomain: 'dipdevopsusach2020', tokenCredentialId: 'slack')
+        }
+        failure {
+    
+            slackSend (channel: 'U01DD6F014K', color: '#00FF00', message: "Build Failure: [Dianela Tamayo] [${env.JOB_NAME}] [${params.eleccion}] stage [${env.STAGE_NAME}]", channel: 'U01DD6F014K', teamDomain: 'dipdevopsusach2020', tokenCredentialId: 'slack')
+    
         }
     }
 }
