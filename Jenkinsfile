@@ -28,11 +28,6 @@ pipeline {
         
             slackSend (color: '#00FF00', message: "Build Success: ${user} '${env.JOB_NAME} [${env.BUILD_NUMBER}]' ${params.CHOICE} Ejecución exitosa")
         }
-        failure {
-            
-            slackSend channel: 'U01DD6F014K', color: '#FF0000', message: [$BUILD_USER][$JOB_NAME][params.eleccion] Ejecucion fallida en stage [env.STAGE_NAME], teamDomain: 'dipdevopsusach2020', tokenCredentialId: 'slack'
-
-        }
     }
 }
 
