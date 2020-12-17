@@ -26,8 +26,7 @@ pipeline {
     post {
         success {
         
-            slackSend (channel: 'U01DD6F014K', color: '#00FF00', message: "$BUILD_USER '${env.JOB_NAME}' ${params.eleccion} Ejecucion exitosa"
-
+            slackSend (color: '#00FF00', message: "Build Success: ${user} '${env.JOB_NAME} [${env.BUILD_NUMBER}]' ${params.CHOICE} Ejecución exitosa")
         }
         failure {
             
