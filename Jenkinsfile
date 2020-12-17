@@ -26,7 +26,8 @@ pipeline {
     post {
         success {
         
-            slackSend (color: '#00FF00', message: "Build Success: ${user} '${env.JOB_NAME} [${env.BUILD_NUMBER}]' ${params.CHOICE} Ejecución exitosa" channel: 'U01DD6F014K')
+            slackSend (color: '#00FF00', message: "Build Success: [${BUILD_USER}] [${env.JOB_NAME}] [${params.CHOICE}]", channel: 'U01DD6F014K', teamDomain: 'dipdevopsusach2020', tokenCredentialId: 'slack')
+    
         }
     }
 }
