@@ -4,6 +4,7 @@ def call(){
   	stage('gradle'){
         script {
         	stage('build & test') {
+                ${myVariable} = 'gfds'
             	sh 'gradfle clean build;'
             }
             stage('sonar') {
