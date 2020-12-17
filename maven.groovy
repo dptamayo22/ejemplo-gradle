@@ -11,22 +11,6 @@ def call(){
     stage('Jar') {
         sh './mvnw clean package -e'
     }
-	stage('Nexus Upload'){
-        nexusArtifactUploader(
-        nexusVersion: 'nexus3',
-        protocol: 'http',
-        nexusUrl: 'localhost:8081',
-        groupId: 'com.devopsusach2020',
-        version: '1.0.1',
-        repository: 'test-nexus',
-        credentialsId: 'nexus',
-        artifacts: [
-            [artifactId: 'DevOpsUsach2020',
-            classifier: '',
-            file: 'build/DevOpsUsach2020-0.0.1.jar',
-            type: 'jar']
-        ])
-    }
     stage('Run') {
         sh 'nohup bash ./mvnw spring-boot:run &'
     }
