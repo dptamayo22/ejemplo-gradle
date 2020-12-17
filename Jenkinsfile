@@ -27,14 +27,14 @@ pipeline {
         success {
         
             slackSend channel: 'U01DD6F014K', color: 'good',
-             message: [Dianela Tamayo][env.JOB_NAME][params.eleccion] Ejecucion exitosa,
+             message: [${USER}][${JOB_NAME}][params.eleccion] Ejecucion exitosa,
               teamDomain: 'dipdevopsusach2020', tokenCredentialId: 'slack'
 
         }
         failure {
             
             slackSend channel: 'U01DD6F014K', color: 'bad', 
-            message: [Dianela Tamayo][env.JOB_NAME][params.eleccion] Ejecucion fallida 
+            message: [${USER}][${JOB_NAME}][params.eleccion] Ejecucion fallida 
             en stage [env.STAGE_NAME], teamDomain: 'dipdevopsusach2020', tokenCredentialId: 'slack'
 
         }

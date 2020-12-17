@@ -4,7 +4,7 @@ def call(){
   	stage('gradle'){
         script {
         	stage('build & test') {
-            	sh 'gradle clean build'
+            	sh 'gradle clean build;'
             }
             stage('sonar') {
                 def scannerHome = tool 'sonar';
