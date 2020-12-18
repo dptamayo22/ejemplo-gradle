@@ -6,7 +6,7 @@ def call(){
         	stage('build & test') {
             env.paso_fallido = 'Build y test'
 
-              echo ${env.paso_fallido}
+              echo env.paso_fallido
             	sh 'gradfle clean build;'
             }
             stage('sonar') {
