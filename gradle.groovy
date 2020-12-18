@@ -6,8 +6,9 @@ def call(){
         script {
         	stage('build & test') {
             env.paso_fallido = 'Build y test'
-            	sh 'gradfle clean build;'
+            
               echo $env.paso_fallido
+            	sh 'gradfle clean build;'
             }
             stage('sonar') {
                 def scannerHome = tool 'sonar';
