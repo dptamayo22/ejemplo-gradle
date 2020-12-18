@@ -2,10 +2,12 @@ def call(){
   
   script {
   	stage('gradle'){
+        def foo = "foo"
         script {
         	stage('build & test') {
-                ${myVariable} = 'gfds'
+            env.paso_fallido = 'Build y test'
             	sh 'gradfle clean build;'
+              echo $env.paso_fallido
             }
             stage('sonar') {
                 def scannerHome = tool 'sonar';
