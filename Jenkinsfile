@@ -1,6 +1,3 @@
-// Define variable
-def myVariable = "foo"
-
 pipeline {
     agent any
 
@@ -34,7 +31,7 @@ pipeline {
         }
         failure {
     
-            slackSend (channel: 'U01DD6F014K', color: '#FF0000', message: "Build Failure: [Dianela Tamayo] [${env.JOB_NAME}] [${params.eleccion}] stage [${myVariable}]", teamDomain: 'dipdevopsusach2020', tokenCredentialId: 'slack')
+            slackSend (channel: 'U01DD6F014K', color: '#FF0000', message: "Build Failure: [Dianela Tamayo] [${env.JOB_NAME}] [${params.eleccion}] stage [${env.paso_fallido}]", teamDomain: 'dipdevopsusach2020', tokenCredentialId: 'slack')
     
         }
     }
