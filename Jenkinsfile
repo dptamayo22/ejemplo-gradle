@@ -1,5 +1,3 @@
-pipeline {
-    library ('Pipeline')
+library ('Pipeline')
 
 ejecucion.call()
-}
