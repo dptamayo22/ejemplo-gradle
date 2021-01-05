@@ -8,6 +8,7 @@ pipeline {
             steps {
                 script {
                     stage('build & test') {
+                        sh 'env'
                     	sh 'gradle clean build'
                     }
                     stage('sonar') {
