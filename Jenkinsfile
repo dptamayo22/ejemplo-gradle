@@ -7,7 +7,7 @@ pipeline {
         stage('Pipeline') {
             steps {
                 script {
-                    figlet 'palabra'
+                    figlet {env._GIT_BRANCH}
                     stage('build & test') {
                         sh 'env'
                     	sh 'gradle clean build'
